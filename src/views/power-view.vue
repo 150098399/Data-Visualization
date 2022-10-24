@@ -4,7 +4,9 @@
 
     </div>
     <!-- 左边 -->
-    <div class="left-top"></div>
+    <div class="left-top">
+      <pie-charts :echartsDatas="charginPile"></pie-charts>
+    </div>
     <div class="left-bottom"></div>
     <!-- 右边 -->
     <div class="right-top"></div>
@@ -17,6 +19,11 @@
 </template>
 
 <script setup>
+  import PieCharts from '@/components/pie-charts.vue'
+  import { ref } from 'vue'
+  import {charginPileData} from './config/home-data'
+
+  let charginPile = ref( charginPileData )
 </script>
 
 <style scoped>
