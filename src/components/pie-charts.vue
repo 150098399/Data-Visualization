@@ -4,7 +4,8 @@
 
 <script setup>
   import * as echarts from 'echarts'
-  import { onMounted, ref } from 'vue'
+  import { onMounted, ref, watch } from 'vue'
+  import useEchart from '@/hooks/useEcharts.js'
   const props = defineProps({
     width: {
       type: String,
@@ -20,15 +21,27 @@
     }
   })
 
-  let divRef = ref(null)
-  onMounted(() => {
-    let myChart = echarts.init(divRef.value, null, {renderer: 'svg'})
-    let option = getOption(props.echartsDatas)
-    
-    myChart.setOption(option)
+  watch(()=> props.echartsDatas, (newV,oldV)=>{
+    setupEcahrt(newV)
   })
 
- function getOption(pieDatas = []) {
+  let divRef = ref(null)
+  let myChart = null
+  onMounted(() => {
+    setupEcahrt(props.echartsDatas)
+  })
+
+  function setupEcahrt(echartsDatas) {
+    if (!myChart) {
+      myChart = useEchart(divRef.value)
+    }
+    let option = getOption(echartsDatas)
+    myChart.setOption(option)
+  }
+
+
+
+  function getOption(pieDatas = []) {
     let colors = pieDatas.map((item) => {
       return item.color;
     });
