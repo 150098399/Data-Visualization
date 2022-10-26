@@ -48,3 +48,35 @@ export const processMonitoringData = [
       "data": [5, 20, 0, 0, 15, 0, 0, 0, 0, 0, 18, 0]
   }
 ]
+
+// 充电数据统计
+export const chargingStatisticsData = [
+  {
+      "name": "一月",
+      "value": 80
+  },
+  {
+      "name": "二月",
+      "value": 100
+  },
+  {
+      "name": "三月",
+      "value": 20
+  },
+  {
+      "name": "四月",
+      "value": 30
+  },
+  {
+      "name": "五月",
+      "value": 60
+  },
+  {
+      "name": "六月",
+      "value": 90
+  },
+  {
+      "name": "七月",
+      "value": 40
+  }
+]

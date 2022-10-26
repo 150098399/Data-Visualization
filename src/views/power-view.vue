@@ -12,8 +12,12 @@
     </div>
     <!-- 右边 -->
     <div class="right-top"></div>
-    <div class="right-center"></div>
-    <div class="right-bottom"></div>
+    <div class="right-center">
+      <bar-charts :echartsDatas="chargingStatistics"></bar-charts>
+    </div>
+    <div class="right-bottom">
+      
+    </div>
     <!-- 中间 -->
     <div class="center"></div>
     <div class="bottom"></div>
@@ -23,11 +27,13 @@
 <script setup>
   import PieCharts from '@/components/pie-charts.vue'
   import LineCharts from '@/components/line-charts.vue'
+  import barCharts from '@/components/bar-charts.vue'
   import { ref } from 'vue'
-  import {charginPileData, processMonitoringData} from './config/home-data'
+  import {charginPileData, processMonitoringData, chargingStatisticsData} from './config/home-data'
 
   let charginPile = ref( charginPileData )
   let processMonitoring = ref(processMonitoringData)
+  let chargingStatistics = ref(chargingStatisticsData)
 </script>
 
 <style scoped>
@@ -36,6 +42,8 @@
   width: 100%;
   height: 100%;
   background-image: url(@/assets/images/bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .header {
@@ -45,6 +53,8 @@
   right: 0;
   height: 56px;
   background-image: url(@/assets/images/bg_header.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .left-top {
@@ -55,6 +65,8 @@
   width: 536px;
   height: 443px;
   background-image: url(@/assets/images/bg_left-top.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .left-bottom {
@@ -65,6 +77,8 @@
   width: 536px;
   height: 443px;
   background-image: url(@/assets/images/bg_left_bottom.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .right-top {
@@ -76,6 +90,7 @@
     
   background-image: url(@/assets/images/bg_right_top.svg);
   background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 .right-center {
   position: absolute;
@@ -86,6 +101,7 @@
 
   background-image: url(@/assets/images/bg_right_center.svg);
   background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 .right-bottom {
   position: absolute;
@@ -100,6 +116,7 @@
 
   background-image: url(@/assets/images/bg_right_bottom.svg);
   background-repeat: no-repeat;
+  background-size: 100% 100%;
 
 }
 
