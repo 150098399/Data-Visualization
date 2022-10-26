@@ -29,11 +29,21 @@
   import LineCharts from '@/components/line-charts.vue'
   import barCharts from '@/components/bar-charts.vue'
   import { ref } from 'vue'
-  import {charginPileData, processMonitoringData, chargingStatisticsData} from './config/home-data'
+  import { charginPileData, processMonitoringData, chargingStatisticsData } from './config/home-data'
+  import { getPowerScreenData } from '@/services'
 
   let charginPile = ref( charginPileData )
   let processMonitoring = ref(processMonitoringData)
   let chargingStatistics = ref(chargingStatisticsData)
+
+  getPowerScreenData().then(res => {
+    console.log(res);
+    charginPile.value = res.data.chargingPile.data
+    processMonitoring.value = res.data.processMonitoring.data
+    chargingStatistics.value = res.data.chargingStatistics.data
+  })
+  
+
 </script>
 
 <style scoped>
