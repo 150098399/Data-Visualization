@@ -7,7 +7,9 @@
     <div class="left-top">
       <pie-charts :echartsDatas="charginPile"></pie-charts>
     </div>
-    <div class="left-bottom"></div>
+    <div class="left-bottom">
+      <line-charts :echartsDatas="processMonitoring"></line-charts>
+    </div>
     <!-- 右边 -->
     <div class="right-top"></div>
     <div class="right-center"></div>
@@ -20,10 +22,12 @@
 
 <script setup>
   import PieCharts from '@/components/pie-charts.vue'
+  import LineCharts from '@/components/line-charts.vue'
   import { ref } from 'vue'
-  import {charginPileData} from './config/home-data'
+  import {charginPileData, processMonitoringData} from './config/home-data'
 
   let charginPile = ref( charginPileData )
+  let processMonitoring = ref(processMonitoringData)
 </script>
 
 <style scoped>

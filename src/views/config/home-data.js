@@ -36,3 +36,15 @@ export const charginPileData = [
     color: "#00C6FF",
   },
 ]
+
+// 流程监控的数据
+export const processMonitoringData = [
+  {
+      "name": "正常",
+      "data": [12, 0, 8, 0, 0, 0, 0, 0, 30, 0, 0, 0]
+  },
+  {
+      "name": "异常",
+      "data": [5, 20, 0, 0, 15, 0, 0, 0, 0, 0, 18, 0]
+  }
+]

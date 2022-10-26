@@ -3,7 +3,6 @@
 </template>
 
 <script setup>
-  import * as echarts from 'echarts'
   import { onMounted, ref, watch } from 'vue'
   import useEchart from '@/hooks/useEcharts.js'
   const props = defineProps({
@@ -31,7 +30,7 @@
     setupEcahrt(props.echartsDatas)
   })
 
-  function setupEcahrt(echartsDatas) {
+  function setupEcahrt(echartsDatas = []) {
     if (!myChart) {
       myChart = useEchart(divRef.value)
     }
@@ -41,19 +40,19 @@
 
 
 
-  function getOption(pieDatas = []) {
-    let colors = pieDatas.map((item) => {
+  function getOption(echartsDatas) {
+    let colors = echartsDatas.map((item) => {
       return item.color;
     });
 
-    let data = pieDatas.map((item) => {
+    let data = echartsDatas.map((item) => {
       return {
         value: item.value,
         name: item.name,
       };
     });
 
-    let total = pieDatas.reduce((a, b) => {
+    let total = echartsDatas.reduce((a, b) => {
       return a + b.value * 1;
     }, 0);
 
@@ -87,7 +86,7 @@
         itemHeigth: 16,
         icon: "rect",
         formatter: function (name) {
-          var currentItem = pieDatas.find((item) => item.name === name);
+          var currentItem = echartsDatas.find((item) => item.name === name);
           return (
             "{nameSty|" +
             currentItem.name +
