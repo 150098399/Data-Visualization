@@ -16,7 +16,7 @@
       <bar-charts :echartsDatas="chargingStatistics"></bar-charts>
     </div>
     <div class="right-bottom">
-      
+      <right-bottom-svg></right-bottom-svg>
     </div>
     <!-- 中间 -->
     <div class="center"></div>
@@ -28,6 +28,7 @@
   import PieCharts from '@/components/pie-charts.vue'
   import LineCharts from '@/components/line-charts.vue'
   import barCharts from '@/components/bar-charts.vue'
+  import RightBottomSvg from '@/components/right-bottom-svg.vue'
   import { ref } from 'vue'
   import { charginPileData, processMonitoringData, chargingStatisticsData } from './config/home-data'
   import { getPowerScreenData } from '@/services'
