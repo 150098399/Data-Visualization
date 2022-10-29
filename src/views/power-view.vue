@@ -137,7 +137,8 @@
 
 .bottom {
   position: absolute;
-  right: 540px; ottom: 49px;
+  right: 540px;
+  bottom: 49px;
   width: 823px;
   height: 209px;
     
