@@ -92,21 +92,31 @@
         ry="4.844"
       /> -->
 
-      <circle cx="0" cy="0" r="5" class="hy-cls-3">
+
+      <template v-for="(item, index) in echartsDatas" :key="index">
+        <circle cx="0" cy="0" :r="item.value" class="hy-cls-3">
         <animateMotion 
-          dur="10s"
+          :dur="item.dur"
           repeatCount="indefinite"
           rotate="auto"
-          begin="0s"
+          :begin="item.begin"
         >
           <mpath href="#curve"></mpath>>
         </animateMotion>>
       </circle>
+      </template>>
+
+      
 </svg>
 </template>
 
 <script setup>
-
+  const props = defineProps({
+    echartsDatas: {
+      type: Array,
+      default: () => []
+    }
+  })
 </script>
 
 <style scoped>
