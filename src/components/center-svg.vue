@@ -1205,7 +1205,16 @@
           </text>
         </g>
       </g>
-</svg>
+    </svg>
+
+    <!-- 烟花特效 -->
+    <img class="lingxA" src="../assets/images/ling/lingxA.png">
+    <img class="lingxB" src="../assets/images/ling/lingxB.png">
+    <img class="lingxC" src="../assets/images/ling/lingxC.png">
+    <img class="lingxD" src="../assets/images/ling/lingxD.png">
+    <img class="lingxE" src="../assets/images/ling/lingxE.png">
+    <img class="lingxF" src="../assets/images/ling/lingxF.png">
+
   </div>
 </template>
 
@@ -1687,5 +1696,117 @@
               opacity: 0;
             }
           }
-          
+
+        /* 烟花特效 */
+.center-svg{
+  position: relative;
+}
+
+/* 布局定位 */
+.center .lingxA {
+  position: absolute;
+  top: 30%;
+  left: 47%;
+}
+.center .lingxB {
+  position: absolute;
+  top: 35%;
+  left: 58%;
+}
+.center .lingxC {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+.center .lingxD {
+  position: absolute;
+  top: 28%;
+  left: 41%;
+}
+.center .lingxE {
+  position: absolute;
+  top: 28%;
+  left: 54%;
+}
+.center .lingxF {
+  position: absolute;
+  top: 40%;
+  left: 53%;
+}
+
+
+/**======城市烟花特效=======*/
+.center .lingxA {
+  opacity: 0;
+  animation: lingxA 2s linear infinite;
+}
+.center .lingxB {
+  opacity: 0;
+  animation: lingxB 2.2s linear infinite;
+}
+.center .lingxC {
+  opacity: 0;
+  animation: lingxC 1.7s linear infinite;
+}
+.center .lingxD {
+  opacity: 0;
+  animation: lingxC 2.7s linear infinite;
+}
+.center .lingxE {
+  opacity: 0;
+  animation: lingxB 1.2s linear infinite;
+}
+.center .lingxF {
+  opacity: 0;
+  animation: lingxA 1.4s linear infinite;
+}
+/* 向上移动的烟花 */
+@keyframes lingxA {
+  from {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-160px);
+    opacity: 0;
+  }
+}
+
+@keyframes lingxB {
+  from {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  60%,
+  to {
+    transform: translateY(-120px);
+    opacity: 0;
+  }
+}
+
+@keyframes lingxC {
+  from {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  50%,
+  to {
+    transform: translateY(-90px);
+    opacity: 0;
+  }
+}
+/**======城市烟花特效=======*/
         </style>
