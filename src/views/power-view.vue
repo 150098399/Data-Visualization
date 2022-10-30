@@ -19,7 +19,9 @@
       <right-bottom-svg :echartsDatas="exceptionMonitoring"></right-bottom-svg>
     </div>
     <!-- 中间 -->
-    <div class="center"></div>
+    <div class="center">
+      <center-svg></center-svg>
+    </div>
     <div class="bottom"></div>
   </main>
 </template>
@@ -29,6 +31,7 @@
   import LineCharts from '@/components/line-charts.vue'
   import barCharts from '@/components/bar-charts.vue'
   import RightBottomSvg from '@/components/right-bottom-svg.vue'
+  import CenterSvg from '@/components/center-svg.vue'
   import { ref } from 'vue'
   import { charginPileData, processMonitoringData, chargingStatisticsData, exceptionMonitoringData } from './config/home-data'
   import { getPowerScreenData } from '@/services'
@@ -132,7 +135,6 @@
   width: 823px;
   height: 710px;
     
-  border: 5px solid pink;
 }
 
 .bottom {
