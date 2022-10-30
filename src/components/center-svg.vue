@@ -1621,4 +1621,71 @@
             text-anchor: middle;
             font-family: "Source Han Sans CN";
           }
+
+          /* icon动画特效 */
+          #icon_star_guangzhou {
+            animation: updown 2.2s ease-in infinite;
+          }
+
+          #icon_home_foshan {
+            animation: updown 1.9s ease-in infinite;
+          }
+
+          #icon_location_zhongshan {
+            animation: updown 1.5s ease-in infinite;
+          }
+
+          #icon_hot_zhuhai {
+            animation: updown 2s ease-in infinite;
+          }
+
+          #icon_earth_dongguan {
+            animation: updown 2.3s ease-in infinite;
+          }
+
+          #icon_pie_shenzhen {
+            animation: updown 1.3s ease-in infinite;
+          }
+
+          @keyframes updown {
+            0%, 100%{
+              transform: translateY(0);
+            }
+
+            50%{
+              transform: translateY(-10px);
+            }
+          }
+
+          /* 灯光特效 */
+          .cls-3,
+          .cls-4
+          .cls-8,
+          .cls-9,
+          .cls-13,
+          .cls-14,
+          .cls-18,
+          .cls-19,
+          .cls-23,
+          .cls-24,
+          .cls-28,
+          .cls-29
+          {
+            animation: lightEffect 3s linear infinite;
+          }
+
+          @keyframes lightEffect {
+            0% {
+              opacity: 0;
+            }
+
+            50% {
+              opacity: 1;
+            }
+
+            100% {
+              opacity: 0;
+            }
+          }
+          
         </style>
