@@ -351,6 +351,21 @@
           <feBlend result="blend-2" in="SourceGraphic" />
         </filter>
 
+        <!-- 橙色滤镜 -->
+        <filter
+          id="orange-filter-2"
+          filterUnits="userSpaceOnUse"
+        >
+          <feGaussianBlur result="blur" stdDeviation="6.667" in="SourceAlpha" />
+          <feComposite result="composite" />
+          <feComposite result="composite-2" />
+          <feComposite result="composite-3" />
+          <feFlood result="flood" flood-color="#f97a00" flood-opacity="0.9" />
+          <feComposite result="composite-4" operator="in" in2="composite-3" />
+          <feBlend result="blend" in2="SourceGraphic" />
+          <feBlend result="blend-2" in="SourceGraphic" />
+        </filter>
+
         <filter
           id="filter-3"
           x="126"
@@ -1106,7 +1121,7 @@
                 >
                   <mpath :href="`#line_b_${item}`"></mpath>>
                 </animateMotion>>
-              </circle>>
+              </circle>
 
               <circle class="cus-cls-blue" cx="0" cy="0" r="3" fill="red">
                 <animateMotion
@@ -1117,8 +1132,32 @@
                 >
                   <mpath :href="`#line_b_${item}`"></mpath>>
                 </animateMotion>>
-              </circle>>
-            </template>>
+              </circle>
+            </template>
+
+            <template v-for="item in [1,2,3]">
+              <circle class="cus-cls-orange" cx="0" cy="0" r="3" fill="red">
+                <animateMotion
+                  dur="6s"
+                  begin="0s"
+                  repeatCount="indefinite"
+                  rotate="auto"
+                >
+                  <mpath :href="`#line_o_${item}`"></mpath>>
+                </animateMotion>>
+              </circle>
+
+              <circle class="cus-cls-orange" cx="0" cy="0" r="3" fill="red">
+                <animateMotion
+                  dur="6s"
+                  begin="-3s"
+                  repeatCount="indefinite"
+                  rotate="auto"
+                >
+                  <mpath :href="`#line_o_${item}`"></mpath>>
+                </animateMotion>>
+              </circle>
+            </template>
           </g>
         </g>
         <g id="text">
@@ -1503,6 +1542,12 @@
             fill: #fff;
             opacity: 0.9;
             filter: url(#blue-filter-2);
+          }
+
+          .cus-cls-orange {
+            fill: #fff;
+            opacity: 0.9;
+            filter: url(#orange-filter-2);
           }
 
           .cls-40 {
