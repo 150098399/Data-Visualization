@@ -22,7 +22,9 @@
     <div class="center">
       <center-svg></center-svg>
     </div>
-    <div class="bottom"></div>
+    <div class="bottom">
+      <bottom-panel></bottom-panel>
+    </div>
   </main>
 </template>
 
@@ -32,6 +34,7 @@
   import barCharts from '@/components/bar-charts.vue'
   import RightBottomSvg from '@/components/right-bottom-svg.vue'
   import CenterSvg from '@/components/center-svg.vue'
+  import BottomPanel from '@/components/bottom-panel.vue'
   import { ref } from 'vue'
   import { charginPileData, processMonitoringData, chargingStatisticsData, exceptionMonitoringData } from './config/home-data'
   import { getPowerScreenData } from '@/services'
